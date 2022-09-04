@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace _4_function2
 {
@@ -13,11 +13,13 @@ internal class Program
             double maximumLength = 10;
             double maximumPercentage = 100;
             string userInput;
+            string stopProgram = "exit";
             bool canExitApp = true;
+
 
             while (canExitApp)
             {
-                ShowBar(health, mana, maxHealth, maxMana);
+                ShowBars(health, mana, maxHealth, maxMana);
                
                 Console.SetCursorPosition(0, 6);
 
@@ -28,7 +30,7 @@ internal class Program
                 
                 Console.Clear();
 
-                ShowBar(health, mana, maxHealth, maxMana);
+                ShowBars(health, mana, maxHealth, maxMana);
 
                 Console.WriteLine("\n\nДля выхода введите - exit");
                 Console.WriteLine("\nЧтобы заполнить бары ещё раз нажмите любую клавишу...");
@@ -36,7 +38,7 @@ internal class Program
                 
                 userInput = Console.ReadLine();
 
-                if(userInput == "exit")
+                if(userInput == stopProgram)
                 {
                     canExitApp = false;
                 }
@@ -47,7 +49,7 @@ internal class Program
             }            
         }
 
-        static void ShowBar(double health, double mana, int maxHealth, int maxMana)
+        static void ShowBars(double health, double mana, int maxHealth, int maxMana)
         {
             Console.WriteLine("Healthbar");
             DrawBar((int)health, maxHealth, ConsoleColor.Red, 1, '_');
@@ -56,7 +58,7 @@ internal class Program
             DrawBar((int)mana, maxMana, ConsoleColor.Blue, 4, '_');
         }
         
-        static void DrawBar(int value,  int MaxValue, ConsoleColor color, int position, char symbol = ' ', string sign = "#")
+        static void DrawBar(int value,  int maxValue, ConsoleColor color, int position, char symbol = ' ', string sign = "#")
         {
             ConsoleColor defaultColor = Console.BackgroundColor;
             string bar = "";
@@ -73,7 +75,7 @@ internal class Program
 
             bar = "";
 
-            for(int i = value; i < MaxValue; i++)
+            for(int i = value; i < maxValue; i++)
             {
                 bar += symbol;
             }
