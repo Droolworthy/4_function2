@@ -31,7 +31,7 @@ internal class Program
 
                 ShowBars(health, mana, maxHealth, maxMana);
 
-                Console.WriteLine("\n\nДля выхода введите - exit");
+                Console.WriteLine($"\n\nДля выхода введите - {stopProgram}");
                 Console.WriteLine("\nЧтобы заполнить бары ещё раз нажмите любую клавишу...");
                 Console.Write("\nВвод: ");
                 
