@@ -16,7 +16,6 @@ internal class Program
             string stopProgram = "exit";
             bool canExitApp = true;
 
-
             while (canExitApp)
             {
                 ShowBars(health, mana, maxHealth, maxMana);
